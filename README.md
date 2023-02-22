@@ -1,4 +1,4 @@
-# Shopify Structs
+# AE Structs
 
 This Rust module contains two structs that can be useful for working with data related to products and images.
 
@@ -42,3 +42,4 @@ fn main() {
         featuredImage: Some(image),
     };
 }
+```
