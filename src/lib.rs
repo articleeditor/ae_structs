@@ -10,7 +10,7 @@ pub struct Response<T, S> {
 
 #[derive(Deserialize, Serialize, Debug)]
 pub struct Product {
-    pub _id: String,
+    pub _id: Option<String>,
     pub title: String,
     pub description_html: String,
     pub price: Price,
