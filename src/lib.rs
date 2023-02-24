@@ -1,3 +1,4 @@
+use mongodb::bson::oid::ObjectId;
 use serde::{Deserialize, Serialize};
 use serde_json::Number;
 
@@ -10,7 +11,7 @@ pub struct Response<T, S> {
 
 #[derive(Deserialize, Serialize, Debug)]
 pub struct Product {
-    pub _id: Option<String>,
+    pub _id: Option<ObjectId>,
     pub title: String,
     pub description_html: String,
     pub price: Price,
