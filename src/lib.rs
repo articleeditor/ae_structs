@@ -17,6 +17,14 @@ pub struct Product {
     pub description_html: String,
     pub price: Price,
 }
+
+#[derive(Deserialize, Serialize, Debug)]
+pub struct InsertProduct {
+    pub title: String,
+    pub description_html: String,
+    pub price: Price,
+}
+
 #[derive(Deserialize, Serialize, Debug)]
 pub enum Currency {
     EUR,
