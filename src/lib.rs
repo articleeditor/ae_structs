@@ -1,4 +1,4 @@
-use mongodb::bson::oid::ObjectId;
+use mongodb::bson::{oid::ObjectId, to_document, Bson};
 use serde::{Deserialize, Serialize};
 use serde_json::Number;
 
@@ -16,6 +16,13 @@ pub struct Product {
     pub title: String,
     pub description_html: String,
     pub price: Price,
+}
+
+impl From<Product> for Bson {
+    fn from(product: Product) -> Bson {
+        let doc = to_document(&product).unwrap();
+        Bson::Document(doc)
+    }
 }
 
 #[derive(Deserialize, Serialize, Debug)]
