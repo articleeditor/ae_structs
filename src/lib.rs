@@ -9,7 +9,7 @@ pub struct Response<T, S> {
     pub error: Option<S>,
 }
 
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Deserialize, Serialize, Debug, Clone)]
 pub struct Product {
     #[serde(rename = "_id")]
     pub id: Option<ObjectId>,
@@ -32,13 +32,13 @@ pub struct InsertProduct {
     pub price: Price,
 }
 
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum Currency {
     EUR,
     USD,
 }
 
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Deserialize, Serialize, Debug, Clone)]
 pub struct Price {
     pub value: Number,
     pub currency: Currency,
