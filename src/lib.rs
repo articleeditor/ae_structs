@@ -27,6 +27,7 @@ impl From<Product> for Bson {
 
 #[derive(Deserialize, Serialize, Debug)]
 pub struct InsertProduct {
+    pub shopify_id: Option<String>,
     pub title: String,
     pub description_html: String,
     pub price: Price,
