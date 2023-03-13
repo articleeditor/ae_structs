@@ -11,8 +11,8 @@ pub struct Response<T, S> {
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub struct Product {
-    #[serde(rename = "_id")]
-    pub id: Option<ObjectId>,
+    pub _id: Option<ObjectId>,
+    pub shopify_id: Option<String>,
     pub title: String,
     pub description_html: String,
     pub price: Price,
