@@ -2,7 +2,7 @@ use mongodb::bson::{oid::ObjectId, to_document, Bson};
 use serde::{Deserialize, Serialize};
 use serde_json::Number;
 
-#[derive(Serialize)]
+#[derive(Deserialize, Serialize)]
 pub struct Response<T, S> {
     pub success: bool,
     pub data: Option<T>,
