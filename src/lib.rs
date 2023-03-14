@@ -13,9 +13,9 @@ pub struct Response<T, S> {
 pub struct Product {
     pub _id: Option<ObjectId>,
     pub shopify_id: Option<String>,
-    pub title: String,
-    pub description_html: String,
-    pub price: Price,
+    pub title: Option<String>,
+    pub description_html: Option<String>,
+    pub price: Option<Price>,
 }
 
 impl From<Product> for Bson {
@@ -26,11 +26,11 @@ impl From<Product> for Bson {
 }
 
 #[derive(Deserialize, Serialize, Debug)]
-pub struct InsertProduct {
+pub struct MergeProduct {
     pub shopify_id: Option<String>,
-    pub title: String,
-    pub description_html: String,
-    pub price: Price,
+    pub title: Option<String>,
+    pub description_html: Option<String>,
+    pub price: Option<Price>,
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
