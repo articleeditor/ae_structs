@@ -44,3 +44,19 @@ pub struct Price {
     pub value: Number,
     pub currency: Currency,
 }
+
+pub fn handle_error(e: String) -> Response<(), String> {
+    Response {
+        success: false,
+        data: None,
+        error: Some(e),
+    }
+}
+
+pub fn handle_success<T>(data: Option<T>) -> Response<T, ()> {
+    Response {
+        success: true,
+        data,
+        error: None,
+    }
+}
