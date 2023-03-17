@@ -1,4 +1,5 @@
 use mongodb::bson::{oid::ObjectId, to_document, Bson};
+use rocket::serde::json::Json;
 use serde::{Deserialize, Serialize};
 use serde_json::Number;
 
@@ -45,18 +46,18 @@ pub struct Price {
     pub currency: Currency,
 }
 
-pub fn handle_error(e: String) -> Response<(), String> {
-    Response {
+pub fn handle_error(e: String) -> Json<Response<(), String>> {
+    Json(Response {
         success: false,
         data: None,
         error: Some(e),
-    }
+    })
 }
 
-pub fn handle_success<T>(data: Option<T>) -> Response<T, ()> {
-    Response {
+pub fn handle_success<T>(data: Option<T>) -> Json<Response<T, ()>> {
+    Json(Response {
         success: true,
         data,
         error: None,
-    }
+    })
 }
