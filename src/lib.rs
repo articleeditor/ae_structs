@@ -46,7 +46,7 @@ pub struct Price {
     pub currency: Currency,
 }
 
-pub fn handle_error(e: String) -> Json<Response<(), String>> {
+pub fn handle_error<T, S>(e: S) -> Json<Response<T, S>> {
     Json(Response {
         success: false,
         data: None,
@@ -54,7 +54,7 @@ pub fn handle_error(e: String) -> Json<Response<(), String>> {
     })
 }
 
-pub fn handle_success<T>(data: Option<T>) -> Json<Response<T, ()>> {
+pub fn handle_success<T, S>(data: Option<T>) -> Json<Response<T, S>> {
     Json(Response {
         success: true,
         data,
