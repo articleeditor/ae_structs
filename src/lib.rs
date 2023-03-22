@@ -3,6 +3,8 @@ use rocket::serde::json::Json;
 use serde::{Deserialize, Serialize};
 use serde_json::Number;
 
+pub mod user;
+
 #[derive(Deserialize, Serialize)]
 pub struct Response<T, S> {
     pub success: bool,
