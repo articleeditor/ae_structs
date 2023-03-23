@@ -1,9 +1,10 @@
+use mongodb::bson::oid::ObjectId;
 use serde::{Deserialize, Serialize};
 use validator::Validate;
 
 #[derive(Deserialize, Serialize, Debug, Clone, Validate)]
 pub struct User {
-    pub _id: Option<String>,
+    pub _id: Option<ObjectId>,
     pub email: Option<String>,
     pub password: Option<String>,
     pub first_name: Option<String>,
