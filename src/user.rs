@@ -23,3 +23,8 @@ pub struct MergeUser {
     pub created_at: Option<String>,
     pub updated_at: Option<String>,
 }
+
+#[derive(Deserialize, Serialize, Debug)]
+pub struct UserClaims {
+    pub user_id: String,
+}
