@@ -27,4 +27,5 @@ pub struct MergeUser {
 #[derive(Deserialize, Serialize, Debug)]
 pub struct UserClaims {
     pub user_id: String,
+    pub user_ip: String,
 }
