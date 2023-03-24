@@ -28,4 +28,5 @@ pub struct MergeUser {
 pub struct UserClaims {
     pub user_id: String,
     pub user_ip: String,
+    pub exp: usize,
 }
