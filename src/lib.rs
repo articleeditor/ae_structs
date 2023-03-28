@@ -2,6 +2,7 @@ use rocket::serde::json::Json;
 use serde::{Deserialize, Serialize};
 
 pub mod product;
+pub mod shop;
 pub mod user;
 
 #[derive(Deserialize, Serialize)]
