@@ -25,5 +25,7 @@ pub struct MergeShop {
 #[derive(Deserialize, Serialize, Debug)]
 pub enum Platform {
     Shopify,
-    WooCommerce,
+    Oxid,
+    Magento2,
+    Shopware,
 }
