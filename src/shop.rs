@@ -22,7 +22,7 @@ pub struct MergeShop {
     pub updated_at: Option<String>,
 }
 
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Deserialize, Serialize, Debug, Clone)]
 pub enum Platform {
     Shopify,
     Oxid,
