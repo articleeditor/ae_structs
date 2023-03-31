@@ -4,6 +4,7 @@ use serde::{Deserialize, Serialize};
 pub mod product;
 pub mod shop;
 pub mod user;
+pub mod collection;
 
 #[derive(Deserialize, Serialize)]
 pub struct Response<T, S> {
